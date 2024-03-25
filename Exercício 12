@@ -1,0 +1,51 @@
+import java.util.Scanner;
+// Questão 12: Desenvolva um programa que determine a categoria de participação de um atleta em uma competição com base em sua idade.
+O programa deve solicitar a data de nascimento do atleta e a data atual, calcular a idade e, em seguida, utilizar IF ou Switch Case para decidir a categoria do atleta.
+
+public class Main12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Insira a data de nascimento do atleta (dd/mm/aaaa):");
+        String dataNascimento = scanner.nextLine();
+        System.out.println("Insira a data atual (dd/mm/aaaa):");
+        String dataAtual = scanner.nextLine();
+
+        String[] partesDataNascimento = dataNascimento.split("/");
+        String[] partesDataAtual = dataAtual.split("/");
+        int diaNascimento = Integer.parseInt(partesDataNascimento[0]);
+        int mesNascimento = Integer.parseInt(partesDataNascimento[1]);
+        int anoNascimento = Integer.parseInt(partesDataNascimento[2]);
+
+        int diaAtual = Integer.parseInt(partesDataAtual[0]);
+        int mesAtual = Integer.parseInt(partesDataAtual[1]);
+        int anoAtual = Integer.parseInt(partesDataAtual[2]);
+
+        if (diaNascimento <= 0 || diaNascimento > 31 || mesNascimento <= 0 || mesNascimento > 12 || anoNascimento <= 0) {
+            System.out.println("Data de nascimento inválida.");
+            scanner.close();
+            return;
+        }
+        if (anoAtual < anoNascimento || (anoAtual == anoNascimento && mesAtual < mesNascimento) || 
+            (anoAtual == anoNascimento && mesAtual == mesNascimento && diaAtual < diaNascimento)) {
+            System.out.println("Data inválida. A data atual é anterior à data de nascimento.");
+            scanner.close();
+            return;
+        }
+        int idade = anoAtual - anoNascimento;
+        if (mesAtual < mesNascimento || (mesAtual == mesNascimento && diaAtual < diaNascimento)) {
+            idade--;
+        }
+        if (idade <= 10) {
+            System.out.println("Categoria do atleta: Infantil");
+        } else if (idade >= 11 && idade <= 17) {
+            System.out.println("Categoria do atleta: Juvenil");
+        } else if (idade >= 18 && idade <= 59) {
+            System.out.println("Categoria do atleta: Adulto");
+        } else {
+            System.out.println("Categoria do atleta: Sênior");
+        }
+
+        scanner.close();
+    }
+}
