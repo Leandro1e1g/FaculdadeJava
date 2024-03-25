@@ -1,0 +1,25 @@
+import java.util.Scanner; // Importa a classe Scanner para permitir entrada de dados do usuário
+
+// Questão 1: Desenvolva um programa em C# que receba dois números inteiros e determine qual deles é o maior. O programa deve imprimir o maior número recebido, utilizando lógica de decisão para comparar os valores.
+public class Main { 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+      
+        System.out.print("Digite o primeiro número: ");
+        int numero1 = scanner.nextInt();
+        System.out.print("Digite o segundo número: ");
+        int numero2 = scanner.nextInt();
+
+        if (numero1 > numero2) { 
+            System.out.println("O maior número é: " + numero1);
+        } 
+        else if (numero2 > numero1) {
+            System.out.println("O maior número é: " + numero2);
+        } 
+        else { System.out.println("Os números são iguais.");
+        }
+
+
+        scanner.close(); // Fecha o objeto Scanner para liberar recursos
+    }
+}
