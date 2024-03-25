@@ -1,0 +1,50 @@
+import java.util.Scanner;
+// Questão 9: Desenvolva um programa em C# que calcule o bônus anual de um funcionário com base em sua classificação de 
+desempenho e tempo de serviço. O programa deve solicitar o salário atual do funcionário, sua classificação de desempenho e o 
+número de anos trabalhados na empresa. O bônus é calculado como uma porcentagem do salário: ‘A’ para 20%, ‘B’ para 15%, ‘C’ para 10%, ‘D’ para 5% e ‘E’ para 2%. 
+Além disso, funcionários com mais de 5 anos de serviço recebem um bônus adicional de 5%.
+
+
+public class Main9 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Digite o salário atual do funcionário: ");
+        double salarioAtual = scanner.nextDouble();
+        System.out.print("Digite a classificação de desempenho (A, B, C, D ou E): ");
+        char Desempenho = scanner.next().charAt(0);
+        System.out.print("Digite o número de anos trabalhados na empresa: ");
+        int anosTrabalhados = scanner.nextInt();
+
+        double bonus;
+        switch (Desempenho) {
+          case 'A':
+                bonus = salarioAtual * 0.20;
+            break;
+          case 'B':
+                bonus = salarioAtual * 0.15;
+            break;
+          case 'C':
+                bonus = salarioAtual * 0.10;
+            break;
+          case 'D':
+                bonus = salarioAtual * 0.05;
+            break;
+          case 'E':
+                bonus = salarioAtual * 0.02;
+            break;
+            default:
+                System.out.println("Classificação de desempenho inválida. O programa será encerrado.");
+                scanner.close();
+                return;
+        }
+        if (anosTrabalhados > 5) {
+            bonus += salarioAtual * 0.05;
+        }
+
+        System.out.println("O bônus anual do funcionário é: " + bonus);
+
+        scanner.close();
+    }
+}
