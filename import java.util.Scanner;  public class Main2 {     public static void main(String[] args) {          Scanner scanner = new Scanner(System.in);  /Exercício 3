@@ -1,0 +1,29 @@
+import java.util.Scanner;
+// Questão 3: Desenvolva um programa que ajude os consumidores a comparar preços de produtos em diferentes estabelecimentos. O programa deve receber o nome de um produto, o preço em dois estabelecimentos diferentes e indicar onde o produto é mais barato.
+
+
+public class Main3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o nome do produto: ");
+        String nomeProduto = scanner.nextLine();
+        System.out.print("Digite o preço do produto no primeiro estabelecimento: ");
+        double precoEstabelecimento1 = scanner.nextDouble();
+        System.out.print("Digite o preço do produto no segundo estabelecimento: ");
+        double precoEstabelecimento2 = scanner.nextDouble();
+
+
+        if (precoEstabelecimento1 < precoEstabelecimento2) {
+            System.out.println("O produto " + nomeProduto + " é mais barato no primeiro estabelecimento.");
+        } 
+        else if (precoEstabelecimento2 < precoEstabelecimento1) {
+            System.out.println("O produto " + nomeProduto + " é mais barato no segundo estabelecimento.");
+        } 
+        else {
+            System.out.println("Os preços do produto " + nomeProduto + " são iguais em ambos os estabelecimentos.");
+        }
+
+        scanner.close();
+    }
+}
