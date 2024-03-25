@@ -1,0 +1,61 @@
+import java.util.Scanner;
+// Questão 11: Desenvolva um programa que ajude um passageiro a escolher o melhor assento em um voo com base em suas preferências. 
+O programa deve solicitar o tipo de assento que o passageiro prefere (janela, corredor ou meio) e se deseja mais espaço para as pernas.
+Com base nessas informações, o programa deve utilizar IF ou Switch Case para determinar o assento a ser escolhido.
+
+public class Main11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Insira o tipo de assento desejado (Janela, Corredor ou Meio):");
+        String tipoAssento = scanner.nextLine();
+        System.out.println("Deseja mais espaço para as pernas? (Sim ou Não):");
+        String espacoExtra = scanner.nextLine();
+
+        switch (tipoAssento.toLowerCase()) {
+            case "janela":
+                switch (espacoExtra.toLowerCase()) {
+                    case "sim":
+                        System.out.println("O melhor assento para você é: Janela, Espaço Extra (R$ 350,00)");
+                        break;
+                    
+                    case "não":
+                        System.out.println("O melhor assento para você é: Janela, Normal (R$ 300,00)");
+                        break;
+                    default:
+                        System.out.println("Preferência por espaço extra não disponível.");
+                }
+                break;
+            
+            case "corredor":
+                switch (espacoExtra.toLowerCase()) {
+                    case "sim":
+                        System.out.println("O melhor assento para você é: Corredor, Espaço Extra (R$ 330,00)");
+                        break;
+                    case "não":
+                        System.out.println("O melhor assento para você é: Corredor, Normal (R$ 280,00)");
+                        break;
+                    default:
+                        System.out.println("Preferência por espaço extra não disponível.");
+                }
+                break;
+            
+            case "meio":
+                switch (espacoExtra.toLowerCase()) {
+                    case "sim":
+                        System.out.println("O melhor assento para você é: Meio, Espaço Extra (R$ 300,00)");
+                        break;
+                    case "não":
+                        System.out.println("O melhor assento para você é: Meio, Normal (R$ 250,00)");
+                        break;
+                    default:
+                        System.out.println("Preferência por espaço extra não disponível.");
+                }
+                break;
+            default:
+                System.out.println("Tipo de assento não disponível.");
+        }
+
+        scanner.close();
+    }
+}
