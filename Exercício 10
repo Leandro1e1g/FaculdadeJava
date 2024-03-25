@@ -1,0 +1,72 @@
+import java.util.Scanner;
+//Questão10: Desenvolva um programa que determine a melhor rota de avião para um viajante com base em critérios específicos. 
+O programa deve solicitar o destino, se o viajante prefere a rota mais rápida, mais barata ou com menos escalas, e então decidir qual 
+rota escolher utilizando IF ou Switch Case. Você deve considerar as seguintes rotas: ‘Paris’: 
+7h, R$ 900,00, 1 escala (Rápida) - 12h, R$ 750,00, 2 escalas (Barata) - 10h, R$ 850,00, 1 escala (Menos Escalas) ‘Nova York’: 15h, R$ 650,00, 3 escalas (Rápida)
+- 20h, R$ 500,00, 4 escalas (Barata) - 18h, R$ 550,00, 3 escalas (Menos Escalas) ‘Tóquio’: 20h, R$ 1200,00, Direto (Rápida) - 25h, R$ 1000,00, 1 escala (Barata) - 22h, R$ 1100,00, 1 escala (Menos Escalas)
+
+public class Main10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+     
+        System.out.println("Insira o destino da viagem (Paris, Nova York ou Tóquio):");
+        String destino = scanner.nextLine();
+        System.out.println("Insira a preferência de rota (Rápida, Barata ou Menos Escalas):");
+        String preferencia = scanner.nextLine();
+
+        switch (destino.toLowerCase()) {
+            case "paris":
+                switch (preferencia.toLowerCase()) {
+                    case "rápida":
+                        System.out.println("A melhor rota para Paris é: 7h, R$ 900,00, 1 escala (Rápida)");
+                        break;
+                    case "barata":
+                        System.out.println("A melhor rota para Paris é: 12h, R$ 750,00, 2 escalas (Barata)");
+                        break;
+                    case "menos escalas":
+                        System.out.println("A melhor rota para Paris é: 10h, R$ 850,00, 1 escala (Menos Escalas)");
+                        break;
+                    default:
+                        System.out.println("Preferência de rota não disponível.");
+                }
+                break;
+
+            
+            case "nova york":
+                switch (preferencia.toLowerCase()) {
+                    case "rápida":
+                        System.out.println("A melhor rota para Nova York é: 15h, R$ 650,00, 3 escalas (Rápida)");
+                        break;
+                    case "barata":
+                        System.out.println("A melhor rota para Nova York é: 20h, R$ 500,00, 4 escalas (Barata)");
+                        break;
+                    case "menos escalas":
+                        System.out.println("A melhor rota para Nova York é: 18h, R$ 550,00, 3 escalas (Menos Escalas)");
+                        break;
+                    default:
+                        System.out.println("Preferência de rota não disponível.");
+                }
+                break;
+            case "tóquio":
+                switch (preferencia.toLowerCase()) {
+                    case "rápida":
+                        System.out.println("A melhor rota para Tóquio é: 20h, R$ 1200,00, Direto (Rápida)");
+                        break;
+                    case "barata":
+                        System.out.println("A melhor rota para Tóquio é: 25h, R$ 1000,00, 1 escala (Barata)");
+                        break;
+                    case "menos escalas":
+                        System.out.println("A melhor rota para Tóquio é: 22h, R$ 1100,00, 1 escala (Menos Escalas)");
+                        break;
+                    default:
+                        System.out.println("Preferência de rota não disponível.");
+                }
+                break;
+            default:
+                System.out.println("Destino não disponível.");
+        }
+
+        scanner.close();
+    }
+}
