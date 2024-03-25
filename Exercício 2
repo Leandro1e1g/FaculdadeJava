@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main2 {
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in);
+
+// Questão 2: Desenvolva um programa que receba três números inteiros e determine qual deles é o maior. O programa deve imprimir o maior número recebido, utilizando lógica de decisão para comparar os valores.
+
+
+int numero3 = scanner.nextInt();
+System.out.print("Digite o primeiro número inteiro: ");
+int numero4 = scanner.nextInt();
+System.out.print("Digite o segundo número inteiro: ");
+int numero5 = scanner.nextInt();
+System.out.print("Digite o terceiro número inteiro: ");
+
+
+if (numero3 > numero4 && numero3 > numero5) {
+    System.out.println("Na segunda questão, o maior número é: " + numero3);
+} 
+else if (numero4 > numero3 && numero4 > numero5) {
+    System.out.println("Na segunda questão, o maior número é: " + numero4);
+}
+else if (numero5 > numero3 && numero5 > numero4) {
+    System.out.println("Na segunda questão, o maior número é: " + numero5);
+}
+else {
+    System.out.println("Na segunda questão, pelo menos dois números são iguais ou todos os números são iguais.");
+}
+
+      scanner.close();
+      
+    }
+}
